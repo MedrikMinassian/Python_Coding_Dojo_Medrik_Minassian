@@ -11,7 +11,15 @@ print( greet + " "+ name)	# with a +
 # # 3. print "Hello 42!" with the number in a variable
 name1 = '42'
 print( greet, name1+'!' )	# with a comma
-# print( your code here )	# with a +	-- this one should give us an error!
+#print (n[ame1] +)	# with a +	-- this one should give us an error!
+
+food1 = "Sushi"
+food2 = "pizza"
+
+print( "I love to eat",food1, "and", food2+".")
+print("I love to eat {} and {}." .format ('sushi', 'pizza'))
+print(f'I love to eat {food1} and {food2}.')
+
 # # 4. print "I love to eat sushi and pizza." with the foods in variables
 # fave_food1 = "sushi"
 # fave_food2 = "pizza"
