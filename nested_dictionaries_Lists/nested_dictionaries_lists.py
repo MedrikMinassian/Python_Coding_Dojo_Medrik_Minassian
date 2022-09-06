@@ -12,32 +12,48 @@ sports_directory = {
 }
 z = [ {'x': 10, 'y': 20} ]
 
-#Below you can see the code for value change from 10 to 15
 x[1][0]=15
 
 print(x)
 
-#Below you can see the last name change from Jordan to Bryant
+
 students[0]['last_name']= 'Bryant'
 print (students)
-#Below you can see name "Messi" change to "Andres"
+
 sports_directory['soccer'][0]='Andres'
 print(sports_directory)
 
+z[0]['y']= 30
+print(z)
 
-#iterateDictionary(some_list)
 students = [
         {'first_name':  'Michael', 'last_name' : 'Jordan'},
         {'first_name' : 'John', 'last_name' : 'Rosales'},
         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
-def iterateDictionary(students)
+def iterateDictionary(students,names):
+    for s in range(len(students)):
 
-# iterateDictionary(students) 
-# # should output: (it's okay if each key-value pair ends up on 2 separate lines;
-# # bonus to get them to appear exactly as below!)
-# first_name - Michael, last_name - Jordan
-# first_name - John, last_name - Rosales
-# first_name - Mark, last_name - Guillen
-# first_name - KB, last_name - Tonel
+        print (students[s][names])
+iterateDictionary(students,'first_name')
+iterateDictionary(students,'last_name')
+
+def iterateDictionaryfirstnlast(students):
+    for fn in range(len(students)):
+        for first_name,last_name in students[fn].items():
+            print("{}:{}".format(first_name,last_name))
+
+dojo = {
+    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+def iteratelist(dojo):
+    for key in dojo:
+        print(str(len(dojo[key])),key)
+        for i in range(len(dojo[key])):
+            print(dojo[key][i])
+        
+iteratelist(dojo)        
+
+
