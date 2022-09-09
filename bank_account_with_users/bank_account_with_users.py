@@ -43,6 +43,7 @@ class Users:
         print(self.email)  
         print(self.age)
         print(self.accountnumber)
+        print(self.account)
         return self
 
     def make_deposit(self, amount):
@@ -59,7 +60,7 @@ class Users:
         self.account.display_account_info()
         return self        
 
-user1 = BankAccount (0.1, 300).deposit(500).deposit(45).deposit(1000).withdraw(200).yield_interest().display_account_info()
+user1 = BankAccount (0.1, 300).deposit(500).deposit(45).deposit(50000).withdraw(200).yield_interest().display_account_info()
 user2 = BankAccount(0.01,750).deposit(100).deposit(2200).withdraw(25).withdraw(75).withdraw(50).withdraw(100).yield_interest().display_account_info()
 user3 = BankAccount()
 
