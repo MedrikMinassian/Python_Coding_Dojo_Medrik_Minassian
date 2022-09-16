@@ -7,6 +7,14 @@
     <title>Counter</title>
 </head>
 <body>
-    <h1>This Works</h1>
+    <h1>Counter</h1>
+    <h6>visits{{session['count']}}</h6>
+    <form action="/counting" method="post">
+
+        <button type="submit" name="click" value="add">count</button>
+        <button type="submit" name="click" value="reset">reset</button>
+
+    </form>
+
 </body>
 </html>

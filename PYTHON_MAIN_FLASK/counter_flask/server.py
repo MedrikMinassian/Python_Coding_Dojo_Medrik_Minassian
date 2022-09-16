@@ -1,15 +1,33 @@
-from flask import Flask, render_template  
-app = Flask(__name__)    
+from crypt import methods
+from flask import Flask, render_template, request,redirect, session
+app = Flask(__name__)
+app.secret_key="count"  
+
+
 @app.route('/')          
-
 def index():
-    return render_templates ('index.html')
+    if 'count' not in session:
+        session['count']=1 
+    else:
+        session ['count']+=1
+    return render_template ('index.html')
 
+
+
+
+@app.route('/counting',methods=['POST'] )
+def counterfunction():
+    if request.form['click']=='add':
+        session['count']+=1
+    elif request.form['click']=='reset':
+        session['count']=0
+    return redirect('/')
+
+
+
+
+
+
+    
 if __name__== "__main__":       
     app.run(debug=True, port=5001)
-
-if 'key_name' in session:
-    print('key exists!')
-else:
-    print("key 'key_name' does NOT exist")
-
