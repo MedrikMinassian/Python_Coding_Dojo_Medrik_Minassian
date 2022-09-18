@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_aoo.models.ninja import Ninja
+from flask_app.models.ninja import Ninja
 from pprint import pprint
 DATABASE='dojosandninjasschema'
 class Dojo:
