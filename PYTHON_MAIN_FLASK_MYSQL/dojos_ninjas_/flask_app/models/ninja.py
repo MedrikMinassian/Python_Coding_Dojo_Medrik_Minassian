@@ -18,13 +18,13 @@ class Ninja:
         return "I'm cool"
 
 
-    # ! CREATE
+    
     @classmethod
     def save(cls, data) -> int:
         query = "INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES (%(first_name)s,%(last_name)s,%(age)s,%(dojo_id)s);"
         return connectToMySQL(DATABASE).query_db(query, data)
 
-    # ! READ ALL
+    
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM ninjas"
@@ -35,7 +35,7 @@ class Ninja:
             ninjas.append(cls(ninja))
         return ninjas
 
-    # ! READ ONE
+    
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM ninjas WHERE id = %(id)s;"
@@ -43,15 +43,4 @@ class Ninja:
         ninja = Ninja(result[0])
         return ninja
 
-    # ! UPDATE
-    @classmethod
-    def update(cls,data):
-        query = "UPDATE ninjas SET first_name = %(first_name)s, last_name = %(last_name)s,age = %(age)s,dojo_id = %(dojo_id)s WHERE id = %(id)s;"
-        return connectToMySQL(DATABASE).query_db(query, data)
-
-    # ! DELETE
-    @classmethod
-    def destroy(cls,data):
-        query = "DELETE FROM ninjas WHERE id = %(id)s;"
-        return connectToMySQL(DATABASE).query_db(query, data)
     
