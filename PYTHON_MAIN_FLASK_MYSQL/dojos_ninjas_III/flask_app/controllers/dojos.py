@@ -33,6 +33,7 @@
 from flask_app import app
 from flask import render_template, request, redirect, session
 from flask_app.models.dojo import Dojo
+from flask_app.models.ninja import Ninja
 from pprint import pprint
 
 @app.route("/dojos")
