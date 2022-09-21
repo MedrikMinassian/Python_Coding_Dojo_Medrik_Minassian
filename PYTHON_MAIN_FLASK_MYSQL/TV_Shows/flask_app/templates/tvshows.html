@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Tvshows</title>
+</head>
+<body>
+    {{session}}
+    <a class="btn btn-danger" href="/logout">logout</a>
+    <div>Welcome, {{session.first_name}}
+        <br>
+        {{session.first_name}}, please don't mess this!
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Network</th>
+                <th scope="col">Description</th>
+                <th scope="col">user</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for tvshow in tvshows  %}
+            <tr>
+                <th scope="row">{{tvshow.id}}</th>
+                <td>{{tvshow.name}}</td>
+                <td>{{tvshow.network}}</td>
+                <td>{{tvshow.description}}</td>
+                <td>{{tvshow.first_name}}</td>
+                <td>{{tvshow.date_made}}</td>
+                <td><a href="/tvshow/{{tvshow.id}}">show</a>|
+                    {% if tvshow.user_id == session.user_id %}
+                    <a href="/edit/{{tvshow.id}}">edit</a>| <a href="/delete/{{tvshow.id}}">delete</a></td>
+                    {% endif %}
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+        <a class="btn btn-primary" href="/tvshow/new">Add Tv Show</a>
+        <br>
+        <p class="text-right"><a href="/tvshows">Home</a></p>
+</body>
+</html>

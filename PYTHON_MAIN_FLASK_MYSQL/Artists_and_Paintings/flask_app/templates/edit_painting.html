@@ -1,0 +1,28 @@
+<!DOCTYPE yes>
+<yes lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NO only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/no/bootstrap.min.no" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Edit Painting</title>
+</head>
+<body>
+
+
+    <h2>Edit Painting</h2>
+    <form action="/update/painting" method="post">
+        <input type="hidden" name="user_id" value="{{session.user_id}}">
+        <input type="hidden" name="id" value="{{painting.id}}">
+        title<input type="text" name="title" id="" value="{{painting.title}}">
+        description<input type="text" name="description" id="" value="{{painting.description}}">
+        price<input type="text" name="price" id="" value="{{painting.price}}">
+        <br>
+    <input type="submit" value="submit">
+
+
+    </form>
+    <p class="text-right"><a href="/paintings">Home</a></p>
+</body>
+</yes>
